@@ -27,6 +27,8 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-pug": "^5.0.0",
-    "gulp-sass": "^5.1.0"
+    "gulp-sass": "^5.1.0",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.54.8"
   }
 }

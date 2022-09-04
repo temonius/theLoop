@@ -1,27 +1,30 @@
-const { src, dest,series } = require('gulp')
+
+const gulp = require('gulp');
+const pug = require('gulp-pug');  
 const sass = require('gulp-sass')(require('sass'));
-const csso = require('gulp-csso')
-const pug = require('gulp-pug'); 
+const csso = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
-const { watch } = require('browser-sync');
-const sync = require('browser-sync')
+const  watch = require('gulp-watch');
 
-function pug2html (){
-
-    return src('src/*.pug')
-
+gulp.task('pug', function(){
+    return gulp.src('src/*.pug')
     .pipe(pug({
         pretty: true
     }))
+    .pipe(gulp.dest('./src/'));
+    });
 
-    .pipe(dest('src'))
-}
 
-function scss () {
-    return src('src/scss/**.scss')
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(csso())
-    .pipe(concat('index.css'))
-    .pipe(dest('dist'))
-}
+    gulp.task('sass', function(){
+        return gulp.src('src/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(csso())
+        .pipe(gulp.dest('./src/css'));
+    });
+    
+
+    gulp.task('watch', function() {
+        gulp.watch('./src/*.pug',gulp.series(['pug']))
+        gulp.watch('./src/*.scss',gulp.series(['sass']))
+    });
