@@ -1,0 +1,24 @@
+{
+  "name": "theloop",
+  "version": "1.0.0",
+  "description": "market cloatching figma maket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temonius/theLoop.git"
+  },
+  "keywords": [
+    "maket",
+    "figma",
+    "frontend"
+  ],
+  "author": "temonius21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temonius/theLoop/issues"
+  },
+  "homepage": "https://github.com/temonius/theLoop#readme"
+}
