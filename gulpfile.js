@@ -15,16 +15,16 @@ gulp.task('pug', function(){
     });
 
 
-    gulp.task('sass', function(){
-        return gulp.src('src/*.scss')
+    gulp.task('scss', function(){
+        return gulp.src('src/*.sass')
         .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(csso())
+        // .pipe(autoprefixer())
+        // .pipe(csso())
         .pipe(gulp.dest('./src/css'));
     });
     
 
     gulp.task('watch', function() {
         gulp.watch('./src/*.pug',gulp.series(['pug']))
-        gulp.watch('./src/*.scss',gulp.series(['sass']))
+        gulp.watch('./src/*.sass',gulp.series(['scss']))
     });
